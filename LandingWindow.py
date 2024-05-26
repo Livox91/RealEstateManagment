@@ -20,6 +20,9 @@ def AddListingModule():
 def AddAgencyModule():
     AgencyModule = importlib.import_module("AddAgency")
     AgencyModule.addAgency_window()
+def AddPropertyModule():
+    PropertyModule = importlib.import_module("AddProperty")
+    PropertyModule.addProperty_window()
 
 def showaddClientWindow(parent_window):
     parent_window.destroy()
@@ -36,6 +39,9 @@ def showaddAgentWindow(parent_window):
 def showaddSocietyWindow(parent_window):
     parent_window.withdraw()
     AddSocietyModule()
+def showaddPropertyWindow(parent_window):
+    parent_window.destroy()
+    AddPropertyModule()
 
 def relative_to_assets_landing(path: str) -> Path:
     return ASSETS_PATH_LANDING / Path(path)
@@ -104,7 +110,7 @@ def landing_window():
         image=add_property_btn,
         borderwidth=0,
         highlightthickness=0,
-        command= lambda: print("hello"),
+        command= lambda: showaddPropertyWindow(LandingWindow),
         relief="flat"
     )
     add_property_btn_.place(
@@ -428,7 +434,7 @@ def landing_window():
         image=add_agency,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("add_agencty_ clicked"),
+        command=lambda: showaddAgencyWindow(LandingWindow),
         relief="flat"
     )
     add_agency_.place(
@@ -445,7 +451,7 @@ def landing_window():
         image=add_listing,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("add_listing_ clicked"),
+        command=lambda:showaddListingWindow(LandingWindow),
         relief="flat"
     )
     add_listing_.place(

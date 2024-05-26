@@ -132,7 +132,7 @@ def addClient_window():
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command= lambda: getValue(),
+        command= lambda: print("hello"),
         relief="flat"
     )
     Submitbtn.place(
@@ -174,15 +174,6 @@ def addClient_window():
         height=30.0
     )
     #Add Client End
-    def getValue():
-        name = name_entry.get()
-        contact = contact_entry.get()
-        client_id = clientId_entry.get()
-        if name and contact and client_id :
-            success,message =Connection.addRecordtoTable("client",Client_Id = client_id, Client_name = name , Contact = contact)
-            if success:
-                print("done")
-            else:
-                print(message)
-        
+    
+
     AddClientWindow.mainloop()
