@@ -2,27 +2,27 @@ from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
 
-OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame10")
 
-def relative_to_assets_addShop(path: str) -> Path:
+OUTPUT_PATH = Path(__file__).parent
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame11")
+
+
+def relative_to_assets_Apartment(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 def PropertyWindowModule():
-    PropertyModule = importlib.import_module("AddProperty")
-    PropertyModule.addProperty_window()
+    PropertyModule = importlib.import_module("Add.Property")
+    PropertyModule.Property_window()
 def showPropertyWindow(parent_window):
     parent_window.withdraw()
     PropertyWindowModule()
 
-def addShop_window():
-    addShopWindow = Toplevel()
+def Apartment_window():
+    ApartmentWindow = Toplevel()
+    ApartmentWindow.geometry("800x600")
+    ApartmentWindow.configure(bg = "#FFFFFF")
 
-    addShopWindow.geometry("800x600")
-    addShopWindow.configure(bg = "#FFFFFF")
-
-
-    AddShopCanvas = Canvas(
-        addShopWindow,
+    ApartmentCanvas = Canvas(
+        ApartmentWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -30,26 +30,25 @@ def addShop_window():
         highlightthickness = 0,
         relief = "ridge"
     )
-
-    AddShopCanvas.place(x = 0, y = 0)
-    addShopLogo = PhotoImage(
-        file=relative_to_assets_addShop("image_1.png"))
-    AddShopCanvas.create_image(
+    ApartmentCanvas.place(x = 0, y = 0)
+    ApartmentLogo = PhotoImage(
+        file=relative_to_assets_Apartment("image_1.png"))
+    ApartmentCanvas.create_image(
         120.0,
         80.0,
-        image=addShopLogo
+        image=ApartmentLogo
     )
 
-    AddShopCanvas.create_text(
-        310.0,
+    ApartmentCanvas.create_text(
+        240.0,
         51.0,
         anchor="nw",
-        text="ADD Shop DATA",
+        text=" Apartment DATA",
         fill="#052561",
-        font=("NirmalaUI Bold", 58 * -1)
+        font=("NirmalaUI Bold", 56 * -1)
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         144.0,
         229.0,
         anchor="nw",
@@ -58,7 +57,7 @@ def addShop_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         422.0,
         189.0,
         anchor="nw",
@@ -68,14 +67,14 @@ def addShop_window():
     )
 
     title_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_1.png"))
-    AddShopCanvas.create_image(
+        file=relative_to_assets_Apartment("entry_1.png"))
+    ApartmentCanvas.create_image(
         421.5,
         252.0,
         image=title_entry_img
     )
     title_entry = Entry(
-        addShopWindow,
+        ApartmentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -88,7 +87,7 @@ def addShop_window():
         height=30.0
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         126.0,
         279.0,
         anchor="nw",
@@ -98,14 +97,14 @@ def addShop_window():
     )
 
     location_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_2.png"))
-    AddShopCanvas.create_image(
+        file=relative_to_assets_Apartment("entry_2.png"))
+    ApartmentCanvas.create_image(
         421.5,
         302.0,
         image=location_entry_img
     )
     location_entry = Entry(
-        addShopWindow,
+        ApartmentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -119,14 +118,14 @@ def addShop_window():
     )
 
     areaSize_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_3.png"))
-    AddShopCanvas.create_image(
+        file=relative_to_assets_Apartment("entry_3.png"))
+    ApartmentCanvas.create_image(
         627.0,
         205.0,
         image=areaSize_entry_img
     )
     areaSize_entry = Entry(
-        addShopWindow,
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -139,7 +138,7 @@ def addShop_window():
         height=30.0
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         109.0,
         336.0,
         anchor="nw",
@@ -148,118 +147,118 @@ def addShop_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    societyid_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_4.png"))
-    AddShopCanvas.create_image(
+    societyID_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_4.png"))
+    ApartmentCanvas.create_image(
         294.0,
         352.0,
-        image=societyid_entry_img
+        image=societyID_entry_img
     )
-    societyid_entry = Entry(
-        addShopWindow,
+    societyID_entry = Entry(
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    societyid_entry.place(
+    societyID_entry.place(
         x=260.0,
         y=336.0,
         width=68.0,
         height=30.0
     )
 
-    AddShopCanvas.create_text(
-        448.0,
+    ApartmentCanvas.create_text(
+        425.0,
         335.0,
         anchor="nw",
-        text="Shop_ID",
+        text="Apartment ID",
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    shopid_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_5.png"))
-    AddShopCanvas.create_image(
+    apartmentid_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_5.png"))
+    ApartmentCanvas.create_image(
         625.0,
         351.0,
-        image=shopid_entry_img
+        image=apartmentid_entry_img
     )
-    shopid_entry = Entry(
-        addShopWindow,
+    apartmentid_entry = Entry(
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    shopid_entry.place(
+    apartmentid_entry.place(
         x=591.0,
         y=335.0,
         width=68.0,
         height=30.0
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         104.0,
-        434.0,
+        392.0,
         anchor="nw",
         text="Building_ID",
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    buildingid_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_6.png"))
-    AddShopCanvas.create_image(
+    buildingID_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_6.png"))
+    ApartmentCanvas.create_image(
         294.0,
-        450.0,
-        image=buildingid_entry_img
+        408.0,
+        image=buildingID_entry_img
     )
-    buildingid_entry = Entry(
-        addShopWindow,
+    buildingID_entry = Entry(
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    buildingid_entry.place(
+    buildingID_entry.place(
         x=260.0,
-        y=434.0,
+        y=392.0,
         width=68.0,
         height=30.0
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         452.0,
-        433.0,
+        391.0,
         anchor="nw",
         text="Unit_ID",
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    unitid_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_7.png"))
-    AddShopCanvas.create_image(
+    unitId_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_7.png"))
+    ApartmentCanvas.create_image(
         625.0,
-        449.0,
-        image=unitid_entry_img
+        407.0,
+        image=unitId_entry_img
     )
-    unitid_entry = Entry(
-        addShopWindow,
+    unitId_entry = Entry(
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    unitid_entry.place(
+    unitId_entry.place(
         x=591.0,
-        y=433.0,
+        y=391.0,
         width=68.0,
         height=30.0
     )
 
-    AddShopCanvas.create_text(
+    ApartmentCanvas.create_text(
         95.0,
         189.0,
         anchor="nw",
@@ -269,14 +268,14 @@ def addShop_window():
     )
 
     propertyid_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_8.png"))
-    AddShopCanvas.create_image(
+        file=relative_to_assets_Apartment("entry_8.png"))
+    ApartmentCanvas.create_image(
         294.0,
         205.0,
         image=propertyid_entry_img
     )
     propertyid_entry = Entry(
-        addShopWindow,
+        ApartmentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -290,13 +289,13 @@ def addShop_window():
     )
 
     BackBtn_ = PhotoImage(
-        file=relative_to_assets_addShop("button_1.png"))
+        file=relative_to_assets_Apartment("button_1.png"))
     BackBtn = Button(
-        addShopWindow,
+        ApartmentWindow,
         image=BackBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showPropertyWindow(addShopWindow),
+        command=lambda: showPropertyWindow(ApartmentWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -307,9 +306,9 @@ def addShop_window():
     )
 
     SubmitBtn_ = PhotoImage(
-        file=relative_to_assets_addShop("button_2.png"))
+        file=relative_to_assets_Apartment("button_2.png"))
     SubmitBtn = Button(
-        addShopWindow,
+        ApartmentWindow,
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
@@ -323,64 +322,95 @@ def addShop_window():
         height=51.0
     )
 
-    AddShopCanvas.create_text(
-        93.0,
-        388.0,
+    ApartmentCanvas.create_text(
+        109.0,
+        443.0,
         anchor="nw",
-        text="Lease Issue Date",
+        text="Floor Level",
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    leaseIssue_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_9.png"))
-    AddShopCanvas.create_image(
-        294.0,
-        401.0,
-        image=leaseIssue_entry_img
+    floorlvl_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_9.png"))
+    ApartmentCanvas.create_image(
+        268.0,
+        456.0,
+        image=floorlvl_entry_img
     )
-    leaseIssue_entry = Entry(
-        addShopWindow,
+    floorlvl_entry = Entry(
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    leaseIssue_entry.place(
-        x=260.0,
-        y=385.0,
+    floorlvl_entry.place(
+        x=234.0,
+        y=440.0,
         width=68.0,
         height=30.0
     )
 
-    AddShopCanvas.create_text(
-        419.0,
-        389.0,
+    ApartmentCanvas.create_text(
+        332.0,
+        443.0,
         anchor="nw",
-        text="Lease Expiry Date",
+        text="No.of Beds",
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    leaseExpiry_entry_img = PhotoImage(
-        file=relative_to_assets_addShop("entry_10.png"))
-    AddShopCanvas.create_image(
-        625.0,
-        401.0,
-        image=leaseExpiry_entry_img
+    NoBeds_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_10.png"))
+    ApartmentCanvas.create_image(
+        469.0,
+        455.0,
+        image=NoBeds_entry_img
     )
-    leaseExpiry_entry = Entry(
-        addShopWindow,
+    NoBeds_entry = Entry(
+        ApartmentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    leaseExpiry_entry.place(
-        x=591.0,
-        y=385.0,
+    NoBeds_entry.place(
+        x=435.0,
+        y=439.0,
         width=68.0,
         height=30.0
     )
-    addShopWindow.resizable(False, False)
-    addShopWindow.mainloop()
+
+    ApartmentCanvas.create_text(
+        528.0,
+        443.0,
+        anchor="nw",
+        text="No.of Baths",
+        fill="#000000",
+        font=("NirmalaUI Bold", 20 * -1)
+    )
+
+    NoBath_entry_img = PhotoImage(
+        file=relative_to_assets_Apartment("entry_11.png"))
+    ApartmentCanvas.create_image(
+        672.0,
+        456.0,
+        image=NoBath_entry_img
+    )
+    NoBath_entry = Entry(
+        ApartmentWindow,
+        bd=0,
+        bg="#F8F5F5",
+        fg="#000716",
+        highlightthickness=0
+    )
+    NoBath_entry.place(
+        x=638.0,
+        y=440.0,
+        width=68.0,
+        height=30.0
+    )
+
+    ApartmentWindow.resizable(False, False)
+    ApartmentWindow.mainloop()

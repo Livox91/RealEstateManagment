@@ -5,7 +5,7 @@ import Connection
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH_ADDCLIENT = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame1")
+ASSETS_PATH_CLIENT = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame1")
 
 def LandingWindowModule():
     LandingModule = importlib.import_module("LandingWindow")
@@ -15,14 +15,14 @@ def showLandingWindow(parent_window):
     parent_window.withdraw()
     LandingWindowModule()
 
-def relative_to_assets_AddClient(path: str) -> Path:
-    return ASSETS_PATH_ADDCLIENT / Path(path)
-def addClient_window():
-    AddClientWindow = Toplevel()
-    AddClientWindow.geometry("800x600")
-    AddClientWindow.configure(bg = "#FFFFFF")
-    addClientCanvas = Canvas(
-        AddClientWindow,
+def relative_to_assets_Client(path: str) -> Path:
+    return ASSETS_PATH_CLIENT / Path(path)
+def Client_window():
+    ClientWindow = Toplevel()
+    ClientWindow.geometry("800x600")
+    ClientWindow.configure(bg = "#FFFFFF")
+    ClientCanvas = Canvas(
+        ClientWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -30,25 +30,25 @@ def addClient_window():
         highlightthickness = 0,
         relief = "ridge"
     )
-    addClientCanvas.pack()
-    addClientCanvas.place(x = 0, y = 0)
-    addClientLogo = PhotoImage(
-        file=relative_to_assets_AddClient("image_1.png"))
-    addClientCanvas.create_image(
+    ClientCanvas.pack()
+    ClientCanvas.place(x = 0, y = 0)
+    ClientLogo = PhotoImage(
+        file=relative_to_assets_Client("image_1.png"))
+    ClientCanvas.create_image(
         120.0,
         80.0,
-        image=addClientLogo
+        image=ClientLogo
     )
-    addClientCanvas.create_text(
+    ClientCanvas.create_text(
         285.0,
         51.0,
         anchor="nw",
-        text="ADD Client Data",
+        text=" Client Data",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
 
-    addClientCanvas.create_text(
+    ClientCanvas.create_text(
         92.0,
         243.0,
         anchor="nw",
@@ -57,7 +57,7 @@ def addClient_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addClientCanvas.create_text(
+    ClientCanvas.create_text(
         79.0,
         318.0,
         anchor="nw",
@@ -67,14 +67,14 @@ def addClient_window():
     )
 
     name_entry_image = PhotoImage(
-        file=relative_to_assets_AddClient("entry_1.png"))
-    addClientCanvas.create_image(
+        file=relative_to_assets_Client("entry_1.png"))
+    ClientCanvas.create_image(
         422.5,
         266.0,
         image=name_entry_image
     )
     name_entry = Entry(
-        AddClientWindow,
+        ClientWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -88,14 +88,14 @@ def addClient_window():
     )
 
     contact_entry_image = PhotoImage(
-        file=relative_to_assets_AddClient("entry_2.png"))
-    addClientCanvas.create_image(
+        file=relative_to_assets_Client("entry_2.png"))
+    ClientCanvas.create_image(
         422.5,
         341.0,
         image=contact_entry_image
     )
     contact_entry = Entry(
-        AddClientWindow,
+        ClientWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -109,13 +109,13 @@ def addClient_window():
     )
 
     BackBtn_img = PhotoImage(
-        file=relative_to_assets_AddClient("button_1.png"))
+        file=relative_to_assets_Client("button_1.png"))
     BackBtn = Button(
-        AddClientWindow,
+        ClientWindow,
         image=BackBtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showLandingWindow(AddClientWindow),
+        command=lambda: showLandingWindow(ClientWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -126,9 +126,9 @@ def addClient_window():
     )
 
     Submitbtn_img = PhotoImage(
-        file=relative_to_assets_AddClient("button_2.png"))
+        file=relative_to_assets_Client("button_2.png"))
     Submitbtn = Button(
-        AddClientWindow,
+        ClientWindow,
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
@@ -144,7 +144,7 @@ def addClient_window():
     )
 
     
-    addClientCanvas.create_text(
+    ClientCanvas.create_text(
         109.0,
         189.0,
         anchor="nw",
@@ -154,14 +154,14 @@ def addClient_window():
     )
 
     clientID_entry_img = PhotoImage(
-        file=relative_to_assets_AddClient("entry_3.png"))
-    addClientCanvas.create_image(
+        file=relative_to_assets_Client("entry_3.png"))
+    ClientCanvas.create_image(
         294.0,
         205.0,
         image=clientID_entry_img
     )
     clientId_entry = Entry(
-        AddClientWindow,
+        ClientWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -173,7 +173,7 @@ def addClient_window():
         width=68.0,
         height=30.0
     )
-    #Add Client End
+    # Client End
     
 
-    AddClientWindow.mainloop()
+    ClientWindow.mainloop()

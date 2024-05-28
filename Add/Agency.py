@@ -13,15 +13,15 @@ def showLandingWindow(parent_window):
     parent_window.withdraw()
     LandingWindowModule()
 
-def relative_to_assets_Addagency(path: str) -> Path:
+def relative_to_assets_agency(path: str) -> Path:
     return ASSETS_PATH_AGENCY / Path(path)
-def addAgency_window():
-    AddAgencyWindow = Toplevel()
-    AddAgencyWindow.geometry("800x600")
-    AddAgencyWindow.configure(bg = "#FFFFFF")
+def Agency_window():
+    AgencyWindow = Toplevel()
+    AgencyWindow.geometry("800x600")
+    AgencyWindow.configure(bg = "#FFFFFF")
 
-    addAgencyCanvas = Canvas(
-        AddAgencyWindow,
+    AgencyCanvas = Canvas(
+        AgencyWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -29,23 +29,23 @@ def addAgency_window():
         highlightthickness = 0,
         relief = "ridge"
     )
-    addAgencyCanvas.place(x = 0, y = 0)
-    addAgencyLogo = PhotoImage(
-        file=relative_to_assets_Addagency("image_1.png"))
-    addAgencyCanvas.create_image(
+    AgencyCanvas.place(x = 0, y = 0)
+    AgencyLogo = PhotoImage(
+        file=relative_to_assets_agency("image_1.png"))
+    AgencyCanvas.create_image(
         120.0,
         80.0,
-        image=addAgencyLogo
+        image=AgencyLogo
     )
-    addAgencyCanvas.create_text(
+    AgencyCanvas.create_text(
         292.0,
         51.0,
         anchor="nw",
-        text="ADD Agency Data",
+        text=" Agency Data",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
-    addAgencyCanvas.create_text(
+    AgencyCanvas.create_text(
         74.0,
         243.0,
         anchor="nw",
@@ -53,7 +53,7 @@ def addAgency_window():
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
-    addAgencyCanvas.create_text(
+    AgencyCanvas.create_text(
         51.0,
         318.0,
         anchor="nw",
@@ -63,14 +63,14 @@ def addAgency_window():
     )
 
     AgencyIDEntry_img = PhotoImage(
-        file=relative_to_assets_Addagency("entry_1.png"))
-    addAgencyCanvas.create_image(
+        file=relative_to_assets_agency("entry_1.png"))
+    AgencyCanvas.create_image(
         422.5,
         266.0,
         image=AgencyIDEntry_img
     )
     AgencyIDEntry = Entry(
-        AddAgencyWindow,
+        AgencyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -84,14 +84,14 @@ def addAgency_window():
     )
 
     AgencyNameEntry_img = PhotoImage(
-        file=relative_to_assets_Addagency("entry_2.png"))
-    addAgencyCanvas.create_image(
+        file=relative_to_assets_agency("entry_2.png"))
+    AgencyCanvas.create_image(
         422.5,
         341.0,
         image=AgencyNameEntry_img
     )
     AgencyName_entry = Entry(
-        AddAgencyWindow,
+        AgencyWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -105,13 +105,13 @@ def addAgency_window():
     )
 
     BackBtn_img = PhotoImage(
-        file=relative_to_assets_Addagency("button_1.png"))
+        file=relative_to_assets_agency("button_1.png"))
     BackBtn = Button(
-        AddAgencyWindow,
+        AgencyWindow,
         image=BackBtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showLandingWindow(AddAgencyWindow),
+        command=lambda: showLandingWindow(AgencyWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -122,13 +122,13 @@ def addAgency_window():
     )
 
     Submitbtn_img = PhotoImage(
-        file=relative_to_assets_Addagency("button_2.png"))
+        file=relative_to_assets_agency("button_2.png"))
     Submitbtn = Button(
-        AddAgencyWindow,
+        AgencyWindow,
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: getValue(),
+        command=lambda: print("he;;p"),
         relief="flat"
     )
     Submitbtn.place(
@@ -138,15 +138,4 @@ def addAgency_window():
         width=107.0,
         height=51.0
     )
-
-    def getValue():
-        agency_name = AgencyName_entry.get()
-        agency_id =  AgencyIDEntry.get()
-        if agency_name and agency_id :
-            success , message = Connection.addRecordtoTable("agency",Agency_Id = agency_id,Agency_Name = agency_name)
-            if success:
-                print("done")
-            else:
-                print(message)
-        
-    AddAgencyWindow.mainloop()
+    AgencyWindow.mainloop()

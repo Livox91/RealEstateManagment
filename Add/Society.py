@@ -4,7 +4,7 @@ from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH_ADDSOCIETY = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame5")
+ASSETS_PATH_SOCIETY = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame5")
 
 def LandingWindowModule():
     LandingModule = importlib.import_module("LandingWindow")
@@ -13,15 +13,15 @@ def showLandingWindow(parent_window):
     parent_window.withdraw()
     LandingWindowModule()
 
-def relative_to_assets_addSociety(path: str) -> Path:
-    return ASSETS_PATH_ADDSOCIETY / Path(path)
-def addSociety_window():
-    addSocietyWindow = Toplevel()
-    addSocietyWindow.geometry("800x600")
-    addSocietyWindow.configure(bg = "#FFFFFF")
+def relative_to_assets_Society(path: str) -> Path:
+    return ASSETS_PATH_SOCIETY / Path(path)
+def Society_window():
+    SocietyWindow = Toplevel()
+    SocietyWindow.geometry("800x600")
+    SocietyWindow.configure(bg = "#FFFFFF")
 
-    addSocietyCanvas = Canvas(
-        addSocietyWindow,
+    SocietyCanvas = Canvas(
+        SocietyWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -30,25 +30,25 @@ def addSociety_window():
         relief = "ridge"
     )
 
-    addSocietyCanvas.place(x = 0, y = 0)
-    addSocietyLogo = PhotoImage(
-        file=relative_to_assets_addSociety("image_1.png"))
-    addSocietyCanvas.create_image(
+    SocietyCanvas.place(x = 0, y = 0)
+    SocietyLogo = PhotoImage(
+        file=relative_to_assets_Society("image_1.png"))
+    SocietyCanvas.create_image(
         120.0,
         80.0,
-        image=addSocietyLogo
+        image=SocietyLogo
     )
 
-    addSocietyCanvas.create_text(
+    SocietyCanvas.create_text(
         296.0,
         51.0,
         anchor="nw",
-        text="ADD Society Data",
+        text=" Society Data",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
 
-    addSocietyCanvas.create_text(
+    SocietyCanvas.create_text(
         126.0,
         243.0,
         anchor="nw",
@@ -57,7 +57,7 @@ def addSociety_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addSocietyCanvas.create_text(
+    SocietyCanvas.create_text(
         405.0,
         243.0,
         anchor="nw",
@@ -66,7 +66,7 @@ def addSociety_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addSocietyCanvas.create_text(
+    SocietyCanvas.create_text(
         96.0,
         315.0,
         anchor="nw",
@@ -75,28 +75,28 @@ def addSociety_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AddSocietyIDEntry_img = PhotoImage(
-        file=relative_to_assets_addSociety("entry_1.png"))
-    addSocietyCanvas.create_image(
+    SocietyIDEntry_img = PhotoImage(
+        file=relative_to_assets_Society("entry_1.png"))
+    SocietyCanvas.create_image(
         287.0,
         257.5,
-        image=AddSocietyIDEntry_img
+        image=SocietyIDEntry_img
     )
-    AddSocietyIDEntry = Entry(
-        addSocietyWindow,
+    SocietyIDEntry = Entry(
+        SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    AddSocietyIDEntry.place(
+    SocietyIDEntry.place(
         x=261.0,
         y=243.0,
         width=52.0,
         height=27.0
     )
 
-    addSocietyCanvas.create_text(
+    SocietyCanvas.create_text(
         102.0,
         394.0,
         anchor="nw",
@@ -105,28 +105,28 @@ def addSociety_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addSocietyCityEntry_img = PhotoImage(
-        file=relative_to_assets_addSociety("entry_2.png"))
-    addSocietyCanvas.create_image(
+    SocietyCityEntry_img = PhotoImage(
+        file=relative_to_assets_Society("entry_2.png"))
+    SocietyCanvas.create_image(
         294.0,
         402.5,
-        image=addSocietyCityEntry_img
+        image=SocietyCityEntry_img
     )
-    addSocietyCityEntry = Entry(
-        addSocietyWindow,
+    SocietyCityEntry = Entry(
+        SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    addSocietyCityEntry.place(
+    SocietyCityEntry.place(
         x=261.0,
         y=388.0,
         width=66.0,
         height=27.0
     )
 
-    addSocietyCanvas.create_text(
+    SocietyCanvas.create_text(
         405.0,
         394.0,
         anchor="nw",
@@ -135,63 +135,63 @@ def addSociety_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addSocietyNameEntry_img = PhotoImage(
-        file=relative_to_assets_addSociety("entry_3.png"))
-    addSocietyCanvas.create_image(
+    SocietyNameEntry_img = PhotoImage(
+        file=relative_to_assets_Society("entry_3.png"))
+    SocietyCanvas.create_image(
         586.0,
         402.5,
-        image=addSocietyNameEntry_img
+        image=SocietyNameEntry_img
     )
-    addSocietyNameEntry = Entry(
-        addSocietyWindow,
+    SocietyNameEntry = Entry(
+        SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    addSocietyNameEntry.place(
+    SocietyNameEntry.place(
         x=554.0,
         y=388.0,
         width=64.0,
         height=27.0
     )
 
-    addSocietyNoofHousesEntry_img = PhotoImage(
-        file=relative_to_assets_addSociety("entry_4.png"))
-    addSocietyCanvas.create_image(
+    SocietyNoofHousesEntry_img = PhotoImage(
+        file=relative_to_assets_Society("entry_4.png"))
+    SocietyCanvas.create_image(
         580.0,
         257.5,
-        image=addSocietyNoofHousesEntry_img
+        image=SocietyNoofHousesEntry_img
     )
-    addSocietyNoofHousesEntry = Entry(
-        addSocietyWindow,
+    SocietyNoofHousesEntry = Entry(
+        SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    addSocietyNoofHousesEntry.place(
+    SocietyNoofHousesEntry.place(
         x=512.0,
         y=243.0,
         width=136.0,
         height=27.0
     )
 
-    addSocietyNoofPlotsEntry_img = PhotoImage(
-        file=relative_to_assets_addSociety("entry_5.png"))
-    addSocietyCanvas.create_image(
+    SocietyNoofPlotsEntry_img = PhotoImage(
+        file=relative_to_assets_Society("entry_5.png"))
+    SocietyCanvas.create_image(
         454.5,
         331.0,
-        image=addSocietyNoofPlotsEntry_img
+        image=SocietyNoofPlotsEntry_img
     )
-    addSocietyNoofPlotsEntry = Entry(
-        addSocietyWindow,
+    SocietyNoofPlotsEntry = Entry(
+        SocietyWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    addSocietyNoofPlotsEntry.place(
+    SocietyNoofPlotsEntry.place(
         x=261.0,
         y=315.0,
         width=387.0,
@@ -199,13 +199,13 @@ def addSociety_window():
     )
 
     BackBtn_img = PhotoImage(
-        file=relative_to_assets_addSociety("button_1.png"))
+        file=relative_to_assets_Society("button_1.png"))
     BackBtn = Button(
-        addSocietyWindow,
+        SocietyWindow,
         image=BackBtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showLandingWindow(addSocietyWindow),
+        command=lambda: showLandingWindow(SocietyWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -216,9 +216,9 @@ def addSociety_window():
     )
 
     Submitbtn_img = PhotoImage(
-        file=relative_to_assets_addSociety("button_2.png"))
+        file=relative_to_assets_Society("button_2.png"))
     Submitbtn = Button(
-        addSocietyWindow,
+        SocietyWindow,
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
@@ -233,5 +233,5 @@ def addSociety_window():
         height=51.0
     )
 
-    addSocietyWindow.mainloop()
+    SocietyWindow.mainloop()
 

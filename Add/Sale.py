@@ -13,18 +13,18 @@ def showLandingWindow(parent_window):
     parent_window.withdraw()
     LandingWindowModule()
 
-def relative_to_assets_addSale(path: str) -> Path:
+def relative_to_assets_Sale(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def addSale_window():
-    addSaleWindow = Toplevel()
+def Sale_window():
+    SaleWindow = Toplevel()
 
-    addSaleWindow.geometry("800x600")
-    addSaleWindow.configure(bg = "#FFFFFF")
+    SaleWindow.geometry("800x600")
+    SaleWindow.configure(bg = "#FFFFFF")
 
 
-    AddSaleCanvas = Canvas(
-        addSaleWindow,
+    SaleCanvas = Canvas(
+        SaleWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -33,24 +33,24 @@ def addSale_window():
         relief = "ridge"
     )
 
-    AddSaleCanvas.place(x = 0, y = 0)
-    addSaleLogo = PhotoImage(
-        file=relative_to_assets_addSale("image_1.png"))
-    AddSaleCanvas.create_image(
+    SaleCanvas.place(x = 0, y = 0)
+    SaleLogo = PhotoImage(
+        file=relative_to_assets_Sale("image_1.png"))
+    SaleCanvas.create_image(
         120.0,
         80.0,
-        image=addSaleLogo
+        image=SaleLogo
     )
 
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         304.0,
         51.0,
         anchor="nw",
-        text="ADD Listing Data",
+        text=" Listing Data",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         132.0,
         234.0,
         anchor="nw",
@@ -58,7 +58,7 @@ def addSale_window():
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         114.0,
         286.0,
         anchor="nw",
@@ -66,7 +66,7 @@ def addSale_window():
         fill="#000000",
         font=("NirmalaUI Bold", 20 * -1)
     )
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         114.0,
         340.0,
         anchor="nw",
@@ -76,14 +76,14 @@ def addSale_window():
     )
 
     listingId_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_1.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_1.png"))
+    SaleCanvas.create_image(
         304.0,
         248.5,
         image=listingId_entry_img
     )
     listingId_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -96,7 +96,7 @@ def addSale_window():
         height=27.0
     )
 
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         484.0,
         234.0,
         anchor="nw",
@@ -106,14 +106,14 @@ def addSale_window():
     )
 
     saleId_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_2.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_2.png"))
+    SaleCanvas.create_image(
         626.0,
         248.5,
         image=saleId_entry_img
     )
     saleId_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -126,7 +126,7 @@ def addSale_window():
         height=27.0
     )
 
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         477.0,
         286.0,
         anchor="nw",
@@ -136,14 +136,14 @@ def addSale_window():
     )
 
     clientId_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_3.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_3.png"))
+    SaleCanvas.create_image(
         626.0,
         300.5,
         image=clientId_entry_img
     )
     clientId_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -156,7 +156,7 @@ def addSale_window():
         height=27.0
     )
 
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         492.0,
         338.0,
         anchor="nw",
@@ -166,14 +166,14 @@ def addSale_window():
     )
 
     price_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_4.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_4.png"))
+    SaleCanvas.create_image(
         626.0,
         352.5,
         image=price_entry_img
     )
     price_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -186,7 +186,7 @@ def addSale_window():
         height=27.0
     )
 
-    AddSaleCanvas.create_text(
+    SaleCanvas.create_text(
         125.0,
         397.0,
         anchor="nw",
@@ -196,14 +196,14 @@ def addSale_window():
     )
 
     saleDate_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_5.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_5.png"))
+    SaleCanvas.create_image(
         342.0,
         411.5,
         image=saleDate_entry_img
     )
     saleDate_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -217,14 +217,14 @@ def addSale_window():
     )
 
     propertyId_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_6.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_6.png"))
+    SaleCanvas.create_image(
         304.0,
         300.5,
         image=propertyId_entry_img
     )
     propertyId_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -238,14 +238,14 @@ def addSale_window():
     )
 
     listingDate_entry_img = PhotoImage(
-        file=relative_to_assets_addSale("entry_7.png"))
-    AddSaleCanvas.create_image(
+        file=relative_to_assets_Sale("entry_7.png"))
+    SaleCanvas.create_image(
         342.0,
         355.0,
         image=listingDate_entry_img
     )
     listingDate_entry = Entry(
-        addSaleWindow,
+        SaleWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -259,13 +259,13 @@ def addSale_window():
     )
 
     BackBtn_ = PhotoImage(
-        file=relative_to_assets_addSale("button_1.png"))
+        file=relative_to_assets_Sale("button_1.png"))
     BackBtn = Button(
-        addSaleWindow,
+        SaleWindow,
         image=BackBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showLandingWindow(addSaleWindow),
+        command=lambda: showLandingWindow(SaleWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -276,9 +276,9 @@ def addSale_window():
     )
 
     SubmitBtn_ = PhotoImage(
-        file=relative_to_assets_addSale("button_2.png"))
+        file=relative_to_assets_Sale("button_2.png"))
     SubmitBtn = Button(
-        addSaleWindow,
+        SaleWindow,
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
@@ -291,5 +291,5 @@ def addSale_window():
         width=107.0,
         height=51.0
     )
-    addSaleWindow.resizable(False, False)
-    addSaleWindow.mainloop()
+    SaleWindow.resizable(False, False)
+    SaleWindow.mainloop()

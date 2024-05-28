@@ -14,16 +14,16 @@ def showLandingWindow(parent_window):
     LandingWindowModule()
 
 
-def relative_to_assets_addRental(path: str) -> Path:
+def relative_to_assets_Rental(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def addRental_window():
-    addRentalWindow = Toplevel()
-    addRentalWindow.geometry("800x600")
-    addRentalWindow.configure(bg = "#FFFFFF")
+def Rental_window():
+    RentalWindow = Toplevel()
+    RentalWindow.geometry("800x600")
+    RentalWindow.configure(bg = "#FFFFFF")
 
-    AddRentalCanvas = Canvas(
-        addRentalWindow,
+    RentalCanvas = Canvas(
+        RentalWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -32,25 +32,25 @@ def addRental_window():
         relief = "ridge"
     )
 
-    AddRentalCanvas.place(x = 0, y = 0)
-    addRentalLogo = PhotoImage(
-        file=relative_to_assets_addRental("image_1.png"))
-    AddRentalCanvas.create_image(
+    RentalCanvas.place(x = 0, y = 0)
+    RentalLogo = PhotoImage(
+        file=relative_to_assets_Rental("image_1.png"))
+    RentalCanvas.create_image(
         120.0,
         80.0,
-        image=addRentalLogo
+        image=RentalLogo
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         304.0,
         51.0,
         anchor="nw",
-        text="ADD Listing Data",
+        text=" Listing Data",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         132.0,
         234.0,
         anchor="nw",
@@ -59,7 +59,7 @@ def addRental_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         114.0,
         286.0,
         anchor="nw",
@@ -68,7 +68,7 @@ def addRental_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         114.0,
         340.0,
         anchor="nw",
@@ -78,14 +78,14 @@ def addRental_window():
     )
 
     listingId_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_1.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_1.png"))
+    RentalCanvas.create_image(
         304.0,
         248.5,
         image=listingId_entry_img
     )
     listingId_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -98,7 +98,7 @@ def addRental_window():
         height=27.0
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         475.0,
         234.0,
         anchor="nw",
@@ -108,14 +108,14 @@ def addRental_window():
     )
 
     rentalId_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_2.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_2.png"))
+    RentalCanvas.create_image(
         626.0,
         248.5,
         image=rentalId_entry_img
     )
     rentalId_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -128,7 +128,7 @@ def addRental_window():
         height=27.0
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         477.0,
         286.0,
         anchor="nw",
@@ -138,14 +138,14 @@ def addRental_window():
     )
 
     clientId_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_3.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_3.png"))
+    RentalCanvas.create_image(
         626.0,
         300.5,
         image=clientId_entry_img
     )
     clientId_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -158,7 +158,7 @@ def addRental_window():
         height=27.0
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         493.0,
         338.0,
         anchor="nw",
@@ -168,14 +168,14 @@ def addRental_window():
     )
 
     rent_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_4.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_4.png"))
+    RentalCanvas.create_image(
         626.0,
         352.5,
         image=rent_entry_img
     )
     rent_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -188,7 +188,7 @@ def addRental_window():
         height=27.0
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         115.0,
         397.0,
         anchor="nw",
@@ -198,14 +198,14 @@ def addRental_window():
     )
 
     rentalDate_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_5.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_5.png"))
+    RentalCanvas.create_image(
         342.0,
         411.5,
         image=rentalDate_entry_img
     )
     rentalDate_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -218,7 +218,7 @@ def addRental_window():
         height=27.0
     )
 
-    AddRentalCanvas.create_text(
+    RentalCanvas.create_text(
         477.0,
         397.0,
         anchor="nw",
@@ -228,14 +228,14 @@ def addRental_window():
     )
 
     duration_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_6.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_6.png"))
+    RentalCanvas.create_image(
         668.0,
         411.5,
         image=duration_entry_img
     )
     duration_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -249,14 +249,14 @@ def addRental_window():
     )
 
     propertyId_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_7.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_7.png"))
+    RentalCanvas.create_image(
         304.0,
         300.5,
         image=propertyId_entry_img
     )
     propertyId_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -270,14 +270,14 @@ def addRental_window():
     )
 
     listingDate_entry_img = PhotoImage(
-        file=relative_to_assets_addRental("entry_8.png"))
-    AddRentalCanvas.create_image(
+        file=relative_to_assets_Rental("entry_8.png"))
+    RentalCanvas.create_image(
         342.0,
         355.0,
         image=listingDate_entry_img
     )
     listingDate_entry = Entry(
-        addRentalWindow,
+        RentalWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -291,13 +291,13 @@ def addRental_window():
     )
 
     BackBtn_ = PhotoImage(
-        file=relative_to_assets_addRental("button_1.png"))
+        file=relative_to_assets_Rental("button_1.png"))
     BackBtn = Button(
-        addRentalWindow,
+        RentalWindow,
         image=BackBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showLandingWindow(addRentalWindow),
+        command=lambda: showLandingWindow(RentalWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -308,9 +308,9 @@ def addRental_window():
     )
 
     SubmitBtn_ = PhotoImage(
-        file=relative_to_assets_addRental("button_2.png"))
+        file=relative_to_assets_Rental("button_2.png"))
     SubmitBtn = Button(
-        addRentalWindow,
+        RentalWindow,
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
@@ -323,5 +323,5 @@ def addRental_window():
         width=107.0,
         height=51.0
     )
-    addRentalWindow.resizable(False, False)
-    addRentalWindow.mainloop()
+    RentalWindow.resizable(False, False)
+    RentalWindow.mainloop()

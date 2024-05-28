@@ -6,23 +6,26 @@ ASSETS_PATH_LANDING = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Databa
 
 
 def AddSocietyModule():
-    SocietyModule = importlib.import_module("AddSociety")
-    SocietyModule.addSociety_window()
+    SocietyModule = importlib.import_module("Add.Society")
+    SocietyModule.Society_window()
 def AddClientModule():
-    ClientModule = importlib.import_module("AddClient")
-    ClientModule.addClient_window()
+    ClientModule = importlib.import_module("Add.Client")
+    ClientModule.Client_window()
 def AddAgentModule():
-    AgentModule = importlib.import_module("AddAgent")
-    AgentModule.addAgent_window()
+    AgentModule = importlib.import_module("Add.Agent")
+    AgentModule.Agent_window()
 def AddListingModule():
-    ListingModule = importlib.import_module("AddListing")
-    ListingModule.addListing_window()
+    ListingModule = importlib.import_module("Add.Listing")
+    ListingModule.Listing_window()
 def AddAgencyModule():
-    AgencyModule = importlib.import_module("AddAgency")
-    AgencyModule.addAgency_window()
+    AgencyModule = importlib.import_module("Add.Agency")
+    AgencyModule.Agency_window()
 def AddPropertyModule():
-    PropertyModule = importlib.import_module("AddProperty")
-    PropertyModule.addProperty_window()
+    PropertyModule = importlib.import_module("Add.Property")
+    PropertyModule.Property_window()
+def UpdateClientModule():
+     ClientModule = importlib.import_module("Update.Client")
+     ClientModule.Client_window()
 
 def showaddClientWindow(parent_window):
     parent_window.destroy()
@@ -42,6 +45,10 @@ def showaddSocietyWindow(parent_window):
 def showaddPropertyWindow(parent_window):
     parent_window.destroy()
     AddPropertyModule()
+def showUpdateClientWindow(parent_window):
+    parent_window.destroy()
+    UpdateClientModule()
+
 
 def relative_to_assets_landing(path: str) -> Path:
     return ASSETS_PATH_LANDING / Path(path)
@@ -212,7 +219,7 @@ def landing_window():
         image=update_client,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_7 clicked"),
+        command=lambda: showUpdateClientWindow(LandingWindow),
         relief="flat"
     )
     update_client_.place(

@@ -3,7 +3,7 @@ from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH_ADDAGENT = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame4")
+ASSETS_PATH_AGENT = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame4")
 
 def LandingWindowModule():
     LandingModule = importlib.import_module("LandingWindow")
@@ -12,15 +12,15 @@ def showLandingWindow(parent_window):
     parent_window.withdraw()
     LandingWindowModule()
 
-def relative_to_assets_addAgent(path: str) -> Path:
-    return ASSETS_PATH_ADDAGENT / Path(path)
-def addAgent_window():
-    addAgentWindow = Toplevel()
-    addAgentWindow.geometry("800x600")
-    addAgentWindow.configure(bg = "#FFFFFF")
+def relative_to_assets_Agent(path: str) -> Path:
+    return ASSETS_PATH_AGENT / Path(path)
+def Agent_window():
+    AgentWindow = Toplevel()
+    AgentWindow.geometry("800x600")
+    AgentWindow.configure(bg = "#FFFFFF")
 
-    addAgentCanvas = Canvas(
-        addAgentWindow,
+    AgentCanvas = Canvas(
+        AgentWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -29,25 +29,25 @@ def addAgent_window():
         relief = "ridge"
     )
 
-    addAgentCanvas.place(x = 0, y = 0)
-    addAgentLogo = PhotoImage(
-        file=relative_to_assets_addAgent("image_1.png"))
-    addAgentCanvas.create_image(
+    AgentCanvas.place(x = 0, y = 0)
+    AgentLogo = PhotoImage(
+        file=relative_to_assets_Agent("image_1.png"))
+    AgentCanvas.create_image(
         120.0,
         80.0,
-        image=addAgentLogo
+        image=AgentLogo
     )
 
-    addAgentCanvas.create_text(
+    AgentCanvas.create_text(
         309.0,
         51.0,
         anchor="nw",
-        text="ADD Agent Data",
+        text=" Agent Data",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
 
-    addAgentCanvas.create_text(
+    AgentCanvas.create_text(
         106.0,
         250.0,
         anchor="nw",
@@ -56,7 +56,7 @@ def addAgent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addAgentCanvas.create_text(
+    AgentCanvas.create_text(
         77.0,
         357.0,
         anchor="nw",
@@ -65,28 +65,28 @@ def addAgent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addAgentIDEntry_img = PhotoImage(
-        file=relative_to_assets_addAgent("entry_1.png"))
-    addAgentCanvas.create_image(
+    AgentIDEntry_img = PhotoImage(
+        file=relative_to_assets_Agent("entry_1.png"))
+    AgentCanvas.create_image(
         295.0,
         266.0,
-        image=addAgentIDEntry_img
+        image=AgentIDEntry_img
     )
-    addAgentIDEntry = Entry(
-        addAgentWindow,
+    AgentIDEntry = Entry(
+        AgentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    addAgentIDEntry.place(
+    AgentIDEntry.place(
         x=261.0,
         y=250.0,
         width=68.0,
         height=30.0
     )
 
-    addAgentCanvas.create_text(
+    AgentCanvas.create_text(
         102.0,
         304.0,
         anchor="nw",
@@ -95,70 +95,70 @@ def addAgent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addAgentNameEntry_img = PhotoImage(
-        file=relative_to_assets_addAgent("entry_2.png"))
-    addAgentCanvas.create_image(
+    AgentNameEntry_img = PhotoImage(
+        file=relative_to_assets_Agent("entry_2.png"))
+    AgentCanvas.create_image(
         295.0,
         320.0,
-        image=addAgentNameEntry_img
+        image=AgentNameEntry_img
     )
-    addAgentNameEntry = Entry(
-        addAgentWindow,
+    AgentNameEntry = Entry(
+        AgentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    addAgentNameEntry.place(
+    AgentNameEntry.place(
         x=261.0,
         y=304.0,
         width=68.0,
         height=30.0
     )
 
-    addAgentContactEntry_img = PhotoImage(
-        file=relative_to_assets_addAgent("entry_3.png"))
-    addAgentCanvas.create_image(
+    AgentContactEntry_img = PhotoImage(
+        file=relative_to_assets_Agent("entry_3.png"))
+    AgentCanvas.create_image(
         626.0,
         266.0,
-        image=addAgentContactEntry_img
+        image=AgentContactEntry_img
     )
-    addAgentContactEntry = Entry(
-        addAgentWindow,
+    AgentContactEntry = Entry(
+        AgentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    addAgentContactEntry.place(
+    AgentContactEntry.place(
         x=592.0,
         y=250.0,
         width=68.0,
         height=30.0
     )
 
-    addAgentSocietyIdEntry_img = PhotoImage(
-        file=relative_to_assets_addAgent("entry_4.png"))
-    addAgentCanvas.create_image(
+    AgentSocietyIdEntry_img = PhotoImage(
+        file=relative_to_assets_Agent("entry_4.png"))
+    AgentCanvas.create_image(
         419.5,
         373.0,
-        image=addAgentSocietyIdEntry_img
+        image=AgentSocietyIdEntry_img
     )
-    addAgentSocietyIdEntry = Entry(
-        addAgentWindow,
+    AgentSocietyIdEntry = Entry(
+        AgentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    addAgentSocietyIdEntry.place(
+    AgentSocietyIdEntry.place(
         x=258.0,
         y=357.0,
         width=323.0,
         height=30.0
     )
 
-    addAgentCanvas.create_text(
+    AgentCanvas.create_text(
         119.0,
         415.0,
         anchor="nw",
@@ -167,7 +167,7 @@ def addAgent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addAgentCanvas.create_text(
+    AgentCanvas.create_text(
         385.0,
         245.0,
         anchor="nw",
@@ -176,34 +176,34 @@ def addAgent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    addAgentAgencyIDEntry_img = PhotoImage(
-        file=relative_to_assets_addAgent("entry_5.png"))
-    addAgentCanvas.create_image(
+    AgentAgencyIDEntry_img = PhotoImage(
+        file=relative_to_assets_Agent("entry_5.png"))
+    AgentCanvas.create_image(
         419.5,
         431.0,
-        image=addAgentAgencyIDEntry_img
+        image=AgentAgencyIDEntry_img
     )
-    addAgentAgencyIDEntry = Entry(
-        addAgentWindow,
+    AgentAgencyIDEntry = Entry(
+        AgentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    addAgentAgencyIDEntry.place(
+    AgentAgencyIDEntry.place(
         x=258.0,
         y=415.0,
         width=323.0,
         height=30.0
     )
     BackBtn_img = PhotoImage(
-        file=relative_to_assets_addAgent("button_1.png"))
+        file=relative_to_assets_Agent("button_1.png"))
     BackBtn = Button(
-        addAgentWindow,
+        AgentWindow,
         image=BackBtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showLandingWindow(addAgentWindow),
+        command=lambda: showLandingWindow(AgentWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -213,13 +213,13 @@ def addAgent_window():
         height=51.0
     )
     def getValue():
-        name = addAgentNameEntry.get()
+        name = AgentNameEntry.get()
         print(name)
     
     Submitbtn_img = PhotoImage(
-        file=relative_to_assets_addAgent("button_2.png"))
+        file=relative_to_assets_Agent("button_2.png"))
     Submitbtn = Button(
-        addAgentWindow,
+        AgentWindow,
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
@@ -233,4 +233,4 @@ def addAgent_window():
         width=107.0,
         height=51.0
     )
-    addAgentWindow.mainloop()
+    AgentWindow.mainloop()

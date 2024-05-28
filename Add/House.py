@@ -6,23 +6,23 @@ OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame7")
 
 def PropertyWindowModule():
-    PropertyModule = importlib.import_module("AddProperty")
-    PropertyModule.addProperty_window()
+    PropertyModule = importlib.import_module("Add.Property")
+    PropertyModule.Property_window()
 def showPropertyWindow(parent_window):
     parent_window.withdraw()
     PropertyWindowModule()
-def relative_to_assets_addHouse(path: str) -> Path:
+def relative_to_assets_House(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
-def addHouse_window():
-    addHouseWindow = Toplevel()
+def House_window():
+    HouseWindow = Toplevel()
 
-    addHouseWindow.geometry("800x600")
-    addHouseWindow.configure(bg = "#FFFFFF")
+    HouseWindow.geometry("800x600")
+    HouseWindow.configure(bg = "#FFFFFF")
 
 
-    AddHouseCanvas = Canvas(
-        addHouseWindow,
+    HouseCanvas = Canvas(
+        HouseWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -31,25 +31,25 @@ def addHouse_window():
         relief = "ridge"
     )
 
-    AddHouseCanvas.place(x = 0, y = 0)
-    addHouseLogo = PhotoImage(
-        file=relative_to_assets_addHouse("image_1.png"))
-    AddHouseCanvas.create_image(
+    HouseCanvas.place(x = 0, y = 0)
+    HouseLogo = PhotoImage(
+        file=relative_to_assets_House("image_1.png"))
+    HouseCanvas.create_image(
         120.0,
         80.0,
-        image=addHouseLogo
+        image=HouseLogo
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         295.0,
         51.0,
         anchor="nw",
-        text="ADD House DATA",
+        text=" House DATA",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         144.0,
         229.0,
         anchor="nw",
@@ -58,7 +58,7 @@ def addHouse_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         422.0,
         189.0,
         anchor="nw",
@@ -68,14 +68,14 @@ def addHouse_window():
     )
 
     title_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_1.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_1.png"))
+    HouseCanvas.create_image(
         421.5,
         252.0,
         image=title_entry_img
     )
     title_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -88,7 +88,7 @@ def addHouse_window():
         height=30.0
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         126.0,
         279.0,
         anchor="nw",
@@ -98,14 +98,14 @@ def addHouse_window():
     )
 
     location_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_2.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_2.png"))
+    HouseCanvas.create_image(
         421.5,
         302.0,
         image=location_entry_img
     )
     location_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -119,14 +119,14 @@ def addHouse_window():
     )
 
     areaSize_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_3.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_3.png"))
+    HouseCanvas.create_image(
         627.0,
         205.0,
         image=areaSize_entry_img
     )
     areaSize_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -139,7 +139,7 @@ def addHouse_window():
         height=30.0
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         109.0,
         336.0,
         anchor="nw",
@@ -149,14 +149,14 @@ def addHouse_window():
     )
 
     societyId_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_4.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_4.png"))
+    HouseCanvas.create_image(
         294.0,
         352.0,
         image=societyId_entry_img
     )
     societyId_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -169,7 +169,7 @@ def addHouse_window():
         height=30.0
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         109.0,
         385.0,
         anchor="nw",
@@ -179,14 +179,14 @@ def addHouse_window():
     )
 
     houseId_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_5.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_5.png"))
+    HouseCanvas.create_image(
         294.0,
         408.0,
         image=houseId_entry_img
     )
     houseId_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -199,7 +199,7 @@ def addHouse_window():
         height=30.0
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         451.0,
         328.0,
         anchor="nw",
@@ -209,14 +209,14 @@ def addHouse_window():
     )
 
     Beds_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_6.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_6.png"))
+    HouseCanvas.create_image(
         628.5,
         351.0,
         image=Beds_entry_img
     )
     Beds_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -229,7 +229,7 @@ def addHouse_window():
         height=30.0
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         444.0,
         385.0,
         anchor="nw",
@@ -239,14 +239,14 @@ def addHouse_window():
     )
 
     baths_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_7.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_7.png"))
+    HouseCanvas.create_image(
         630.0,
         402.0,
         image=baths_entry_img
     )
     baths_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -259,7 +259,7 @@ def addHouse_window():
         height=30.0
     )
 
-    AddHouseCanvas.create_text(
+    HouseCanvas.create_text(
         95.0,
         189.0,
         anchor="nw",
@@ -269,14 +269,14 @@ def addHouse_window():
     )
 
     propertyid_entry_img = PhotoImage(
-        file=relative_to_assets_addHouse("entry_8.png"))
-    AddHouseCanvas.create_image(
+        file=relative_to_assets_House("entry_8.png"))
+    HouseCanvas.create_image(
         294.0,
         205.0,
         image=propertyid_entry_img
     )
     propertyid_entry = Entry(
-        addHouseWindow,
+        HouseWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -290,13 +290,13 @@ def addHouse_window():
     )
 
     Backbtn_ = PhotoImage(
-        file=relative_to_assets_addHouse("button_1.png"))
+        file=relative_to_assets_House("button_1.png"))
     Backbtn = Button(
-        addHouseWindow,
+        HouseWindow,
         image=Backbtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showPropertyWindow(addHouseWindow),
+        command=lambda: showPropertyWindow(HouseWindow),
         relief="flat"
     )
     Backbtn.place(
@@ -307,9 +307,9 @@ def addHouse_window():
     )
 
     SubmitBtn_ = PhotoImage(
-        file=relative_to_assets_addHouse("button_2.png"))
+        file=relative_to_assets_House("button_2.png"))
     SubmitBtn = Button(
-        addHouseWindow,
+        HouseWindow,
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
@@ -322,5 +322,5 @@ def addHouse_window():
         width=107.0,
         height=51.0
     )
-    addHouseWindow.resizable(False, False)
-    addHouseWindow.mainloop()
+    HouseWindow.resizable(False, False)
+    HouseWindow.mainloop()

@@ -6,24 +6,24 @@ OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame8")
 
 
-def relative_to_assets_addBuilding(path: str) -> Path:
+def relative_to_assets_Building(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 def PropertyWindowModule():
-    PropertyModule = importlib.import_module("AddProperty")
-    PropertyModule.addProperty_window()
+    PropertyModule = importlib.import_module("Add.Property")
+    PropertyModule.Property_window()
 def showPropertyWindow(parent_window):
     parent_window.withdraw()
     PropertyWindowModule()
 
-def addBuilding_window():
-    addBuildingWindow = Toplevel()
+def Building_window():
+    BuildingWindow = Toplevel()
 
-    addBuildingWindow.geometry("800x600")
-    addBuildingWindow.configure(bg = "#FFFFFF")
+    BuildingWindow.geometry("800x600")
+    BuildingWindow.configure(bg = "#FFFFFF")
 
 
-    AddBuildingCanvas = Canvas(
-        addBuildingWindow,
+    BuildingCanvas = Canvas(
+        BuildingWindow,
         bg = "#FFFFFF",
         height = 600,
         width = 800,
@@ -32,25 +32,25 @@ def addBuilding_window():
         relief = "ridge"
     )
 
-    AddBuildingCanvas.place(x = 0, y = 0)
-    addBuildingLogo = PhotoImage(
-        file=relative_to_assets_addBuilding("image_1.png"))
-    AddBuildingCanvas.create_image(
+    BuildingCanvas.place(x = 0, y = 0)
+    BuildingLogo = PhotoImage(
+        file=relative_to_assets_Building("image_1.png"))
+    BuildingCanvas.create_image(
         120.0,
         80.0,
-        image=addBuildingLogo
+        image=BuildingLogo
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         272.0,
         51.0,
         anchor="nw",
-        text="ADD Building DATA",
+        text=" Building DATA",
         fill="#052561",
         font=("NirmalaUI Bold", 58 * -1)
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         109.0,
         205.0,
         anchor="nw",
@@ -60,14 +60,14 @@ def addBuilding_window():
     )
 
     societyID_entry_img = PhotoImage(
-        file=relative_to_assets_addBuilding("entry_1.png"))
-    AddBuildingCanvas.create_image(
+        file=relative_to_assets_Building("entry_1.png"))
+    BuildingCanvas.create_image(
         294.0,
         221.0,
         image=societyID_entry_img
     )
     societyID_entry = Entry(
-        addBuildingWindow,
+        BuildingWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -80,7 +80,7 @@ def addBuilding_window():
         height=30.0
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         101.0,
         254.0,
         anchor="nw",
@@ -90,14 +90,14 @@ def addBuilding_window():
     )
 
     buildingID_entry_img = PhotoImage(
-        file=relative_to_assets_addBuilding("entry_2.png"))
-    AddBuildingCanvas.create_image(
+        file=relative_to_assets_Building("entry_2.png"))
+    BuildingCanvas.create_image(
         294.0,
         270.0,
         image=buildingID_entry_img
     )
     buildingID_entry = Entry(
-        addBuildingWindow,
+        BuildingWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -110,7 +110,7 @@ def addBuilding_window():
         height=30.0
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         87.0,
         302.0,
         anchor="nw",
@@ -120,14 +120,14 @@ def addBuilding_window():
     )
 
     buildingName_entry_img = PhotoImage(
-        file=relative_to_assets_addBuilding("entry_3.png"))
-    AddBuildingCanvas.create_image(
+        file=relative_to_assets_Building("entry_3.png"))
+    BuildingCanvas.create_image(
         423.5,
         317.0,
         image=buildingName_entry_img
     )
     buildingName_entry = Entry(
-        addBuildingWindow,
+        BuildingWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -140,7 +140,7 @@ def addBuilding_window():
         height=30.0
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         440.0,
         196.0,
         anchor="nw",
@@ -150,14 +150,14 @@ def addBuilding_window():
     )
 
     Noshops_entry_img = PhotoImage(
-        file=relative_to_assets_addBuilding("entry_4.png"))
-    AddBuildingCanvas.create_image(
+        file=relative_to_assets_Building("entry_4.png"))
+    BuildingCanvas.create_image(
         627.0,
         212.0,
         image=Noshops_entry_img
     )
     Noshops_entry = Entry(
-        addBuildingWindow,
+        BuildingWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -170,7 +170,7 @@ def addBuilding_window():
         height=30.0
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         399.0,
         254.0,
         anchor="nw",
@@ -180,14 +180,14 @@ def addBuilding_window():
     )
 
     Noapartments_entry_img = PhotoImage(
-        file=relative_to_assets_addBuilding("entry_5.png"))
-    AddBuildingCanvas.create_image(
+        file=relative_to_assets_Building("entry_5.png"))
+    BuildingCanvas.create_image(
         627.0,
         270.0,
         image=Noapartments_entry_img
     )
     Noapartments_entry = Entry(
-        addBuildingWindow,
+        BuildingWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
@@ -201,13 +201,13 @@ def addBuilding_window():
     )
 
     BackBtn_ = PhotoImage(
-        file=relative_to_assets_addBuilding("button_1.png"))
+        file=relative_to_assets_Building("button_1.png"))
     BackBtn = Button(
-        addBuildingWindow,
+        BuildingWindow,
         image= BackBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: showPropertyWindow(addBuildingWindow),
+        command=lambda: showPropertyWindow(BuildingWindow),
         relief="flat"
     )
     BackBtn.place(
@@ -218,9 +218,9 @@ def addBuilding_window():
     )
 
     SubmitBtn_ = PhotoImage(
-        file=relative_to_assets_addBuilding("button_2.png"))
+        file=relative_to_assets_Building("button_2.png"))
     SubmitBtn = Button(
-        addBuildingWindow,
+        BuildingWindow,
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
@@ -234,7 +234,7 @@ def addBuilding_window():
         height=51.0
     )
 
-    AddBuildingCanvas.create_text(
+    BuildingCanvas.create_text(
         130.0,
         352.0,
         anchor="nw",
@@ -244,14 +244,14 @@ def addBuilding_window():
     )
 
     location_entry_img = PhotoImage(
-        file=relative_to_assets_addBuilding("entry_6.png"))
-    AddBuildingCanvas.create_image(
+        file=relative_to_assets_Building("entry_6.png"))
+    BuildingCanvas.create_image(
         425.5,
         375.0,
         image=location_entry_img
     )
     location_entry = Entry(
-        addBuildingWindow,
+        BuildingWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
@@ -264,5 +264,5 @@ def addBuilding_window():
         height=30.0
     )
    
-    addBuildingWindow.resizable(False, False)
-    addBuildingWindow.mainloop()
+    BuildingWindow.resizable(False, False)
+    BuildingWindow.mainloop()
