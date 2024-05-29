@@ -1,7 +1,8 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-
+import Functionality.add_property
+import Functionality.add_shop
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame10")
 
@@ -382,5 +383,21 @@ def Shop_window():
         width=68.0,
         height=30.0
     )
+   
+    def  add():
+        prop_id = propertyid_entry.get()
+        area_size = areaSize_entry.get()
+        title = title_entry.get()
+        loc = location_entry.get()
+        soc_id = societyid_entry.get()
+        build_id = buildingid_entry.get()
+        unit_id = unitid_entry.get()
+        lease_iss = leaseIssue_entry.get()
+        lease_exp = leaseExpiry_entry.get()
+        shop_id = shopid_entry.get()
+        Functionality.add_shop.create("shops",Shop_ID = shop_id,Lease_issue= lease_iss,Lease_expire= lease_exp,Building_ID = build_id,Unit_ID= unit_id)
+        Functionality.add_property.add_property(area_size=area_size,location=loc,property_id=prop_id,property_type="shop",society_id=soc_id,specific_id=shop_id,title=title)
+        
+   
     ShopWindow.resizable(False, False)
     ShopWindow.mainloop()

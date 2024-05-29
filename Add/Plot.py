@@ -1,6 +1,8 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
+import Functionality.add_property
+import Functionality.add_plot
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -252,7 +254,7 @@ def Plot_window():
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("SubmitBtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     SubmitBtn.place(
@@ -321,5 +323,17 @@ def Plot_window():
         width=68.0,
         height=30.0
     )
+   
+    def add():
+        prop_id = propertyid_entry.get()
+        area_size = areaSize_entry.get()
+        title = title_entry.get()
+        loc = location_entry.get()
+        soc_id = societyID_entry.get()
+        plot_id = plotId_entry.get()
+        lease_iss = leaseissue_entry.get()
+        lease_exp = leaseexpiry_entry.get()
+        Functionality.add_plot.create("plot",Plot_ID = plot_id, Lease_issue = lease_iss, Lease_expiry = lease_exp)
+        Functionality.add_property.add_property(area_size=area_size,location=loc,property_id=prop_id,property_type="plot",society_id=soc_id,specific_id=plot_id,title=title)
     PlotWindow.resizable(False, False)
     PlotWindow.mainloop()

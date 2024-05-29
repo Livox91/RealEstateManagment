@@ -1,7 +1,7 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-
+import Functionality.add_agents
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH_AGENT = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame4")
 
@@ -95,63 +95,63 @@ def Agent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AgentNameEntry_img = PhotoImage(
+    AgentAgencyIDEntry_img = PhotoImage(
         file=relative_to_assets_Agent("entry_2.png"))
     AgentCanvas.create_image(
         295.0,
         320.0,
-        image=AgentNameEntry_img
+        image=AgentAgencyIDEntry_img
     )
-    AgentNameEntry = Entry(
+    AgentAgencyIDEntry = Entry(
         AgentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    AgentNameEntry.place(
+    AgentAgencyIDEntry.place(
         x=261.0,
         y=304.0,
         width=68.0,
         height=30.0
     )
 
-    AgentContactEntry_img = PhotoImage(
+    AgentSocietyIdEntry_img = PhotoImage(
         file=relative_to_assets_Agent("entry_3.png"))
     AgentCanvas.create_image(
         626.0,
         266.0,
-        image=AgentContactEntry_img
+        image=AgentSocietyIdEntry_img
     )
-    AgentContactEntry = Entry(
+    AgentSocietyIdEntry = Entry(
         AgentWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    AgentContactEntry.place(
+    AgentSocietyIdEntry.place(
         x=592.0,
         y=250.0,
         width=68.0,
         height=30.0
     )
 
-    AgentSocietyIdEntry_img = PhotoImage(
+    AgentNameEntry_img = PhotoImage(
         file=relative_to_assets_Agent("entry_4.png"))
     AgentCanvas.create_image(
         419.5,
         373.0,
-        image=AgentSocietyIdEntry_img
+        image=AgentNameEntry_img
     )
-    AgentSocietyIdEntry = Entry(
+    AgentNameEntry = Entry(
         AgentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    AgentSocietyIdEntry.place(
+    AgentNameEntry.place(
         x=258.0,
         y=357.0,
         width=323.0,
@@ -176,21 +176,21 @@ def Agent_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    AgentAgencyIDEntry_img = PhotoImage(
+    AgentContactEntry_img = PhotoImage(
         file=relative_to_assets_Agent("entry_5.png"))
     AgentCanvas.create_image(
         419.5,
         431.0,
-        image=AgentAgencyIDEntry_img
+        image=AgentContactEntry_img
     )
-    AgentAgencyIDEntry = Entry(
+    AgentContactEntry = Entry(
         AgentWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    AgentAgencyIDEntry.place(
+    AgentContactEntry.place(
         x=258.0,
         y=415.0,
         width=323.0,
@@ -212,10 +212,7 @@ def Agent_window():
         width=107.0,
         height=51.0
     )
-    def getValue():
-        name = AgentNameEntry.get()
-        print(name)
-    
+
     Submitbtn_img = PhotoImage(
         file=relative_to_assets_Agent("button_2.png"))
     Submitbtn = Button(
@@ -223,7 +220,7 @@ def Agent_window():
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: getValue(),
+        command=lambda: add(),
         relief="flat"
     )
     Submitbtn.place(
@@ -233,4 +230,11 @@ def Agent_window():
         width=107.0,
         height=51.0
     )
+    def add():
+        agencyid = AgentAgencyIDEntry.get()
+        contact = AgentContactEntry.get()
+        name = AgentNameEntry.get()
+        societyid = AgentSocietyIdEntry.get()
+        agentid = AgentIDEntry.get()
+        Functionality.add_agents.add_agents(name=name,id=agentid,agency_id=agencyid,contact=contact,society_id=societyid)    
     AgentWindow.mainloop()

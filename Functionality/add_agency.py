@@ -1,31 +1,22 @@
 import mysql.connector
 
-def add_agency():
-    # ----------taking inputs firm users
-    agency_id = input("Enter Agency ID: ")
-    agency_name = input("Enter Agency Name: ")
-
-    # ---------------connecting to database
-    host = "localhost"
-    user = "root"
-    password = "Manahil18!"
-    database = "real_estate"
-
+def add_agency(name ,id):
     try:
        
-        connection = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
-        )
+        connection =  mysql.connector.connect(
+                host  = "localhost",
+                port = 3306,
+                user = "root" ,
+                password = "1234",
+                database = "real_estate"
+            )
 
         # --------------------Cursor object
         cursor = connection.cursor()
 
         # ---------------- SQL query
         sql = "INSERT INTO agency (Agency_Id, Agency_Name) VALUES (%s, %s)"
-        val = (agency_id, agency_name)
+        val = (id, name)
 
         # -----------------Execution of the query
         cursor.execute(sql, val)
@@ -38,5 +29,3 @@ def add_agency():
     except mysql.connector.Error as err:
         print(f"Error: {err}")
 
-# ---------add_agency function
-add_agency()

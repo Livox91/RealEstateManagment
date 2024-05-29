@@ -1,7 +1,7 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-import Connection
+import Functionality.add_client
 
 
 OUTPUT_PATH = Path(__file__).parent
@@ -132,7 +132,7 @@ def Client_window():
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command= lambda: print("hello"),
+        command= lambda: add(),
         relief="flat"
     )
     Submitbtn.place(
@@ -174,6 +174,10 @@ def Client_window():
         height=30.0
     )
     # Client End
-    
+    def add():
+        id = clientId_entry.get()
+        name= name_entry.get()
+        contact =contact_entry.get()
+        Functionality.add_client.add_client(contact=contact, id=id, name=name)
 
     ClientWindow.mainloop()

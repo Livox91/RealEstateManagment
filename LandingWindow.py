@@ -1,10 +1,16 @@
 import importlib
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
+from Functionality import delete_agency as DeleteAgency,delete_agent as DeleteAgent,delete_client as DeleteClient,delete_listing as DeleteListing,delete_property as DeleteProperty
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH_LANDING = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame0")
 
-
+def ReadClientModule():
+    ClientModule = importlib.import_module("Read.Client")
+    ClientModule.Client_window()
+def ReadAgentModule():
+    AgentModule = importlib.import_module("Read.Agent")
+    AgentModule.Agent_window()
 def AddSocietyModule():
     SocietyModule = importlib.import_module("Add.Society")
     SocietyModule.Society_window()
@@ -26,6 +32,9 @@ def AddPropertyModule():
 def UpdateClientModule():
      ClientModule = importlib.import_module("Update.Client")
      ClientModule.Client_window()
+def UpdateAgentModule():
+    AgentModule = importlib.import_module("Update.Agent")
+    AgentModule.Agent_window()
 
 def showaddClientWindow(parent_window):
     parent_window.destroy()
@@ -45,9 +54,18 @@ def showaddSocietyWindow(parent_window):
 def showaddPropertyWindow(parent_window):
     parent_window.destroy()
     AddPropertyModule()
-def showUpdateClientWindow(parent_window):
+def showUpdateClientWindow(parent_window,):
     parent_window.destroy()
     UpdateClientModule()
+def showUpdateAgentWindow(parent_window):
+    parent_window.destroy()
+    UpdateAgentModule()
+def showReadAgentWindow(parent_window):
+    parent_window.destroy()
+    ReadAgentModule()
+def showReadClientWindow(parent_window):
+    parent_window.destroy()
+    ReadClientModule()
 
 
 def relative_to_assets_landing(path: str) -> Path:
@@ -236,7 +254,7 @@ def landing_window():
         image=update_agent,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_8 clicked"),
+        command=lambda:showUpdateAgentWindow(LandingWindow),
         relief="flat"
     )
     update_agent_.place(
@@ -288,7 +306,7 @@ def landing_window():
         image=delete_property,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("delete_property_ clicked"),
+        command=lambda: DeleteProperty.delete_property(),
         relief="flat"
     )
     delete_property_.place(
@@ -305,7 +323,7 @@ def landing_window():
         image=delete_client,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("delete_client_ clicked"),
+        command=lambda: DeleteClient.delete_client(),
         relief="flat"
     )
     delete_client_.place(
@@ -322,7 +340,7 @@ def landing_window():
         image=delete_agency,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("delete_agency_ clicked"),
+        command=lambda: DeleteAgency.delete_agency(),
         relief="flat"
     )
     delete_agency_.place(
@@ -339,7 +357,7 @@ def landing_window():
         image=delete_listing,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("delete_listing_ clicked"),
+        command=lambda: DeleteListing.delete_listing(),
         relief="flat"
     )
     delete_listing_.place(
@@ -356,7 +374,7 @@ def landing_window():
         image=delete_agent,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("delete_agent_ clicked"),
+        command=lambda: DeleteAgent.delete_agent(),
         relief="flat"
     )
     delete_agent_.place(
@@ -390,7 +408,7 @@ def landing_window():
         image=read_clients,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("read_clients_ clicked"),
+        command=lambda: showReadClientWindow(LandingWindow),
         relief="flat"
     )
     read_clients_.place(
@@ -407,7 +425,7 @@ def landing_window():
         image=read_agents,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("read_agents_ clicked"),
+        command=lambda: showReadAgentWindow(LandingWindow),
         relief="flat"
     )
     read_agents_.place(

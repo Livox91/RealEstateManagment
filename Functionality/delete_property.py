@@ -38,5 +38,3 @@ def delete_property(property_id):
 
     except mysql.connector.Error as err:
         print(f"Error: {err}")
-property_id_to_delete = input("Enter the Property ID to delete: ")
-delete_property(property_id_to_delete)

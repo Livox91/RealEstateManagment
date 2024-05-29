@@ -1,7 +1,8 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-
+import Functionality.add_house
+import Functionality.add_property
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame7")
 
@@ -313,7 +314,7 @@ def House_window():
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("SubmitBtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     SubmitBtn.place(
@@ -322,5 +323,19 @@ def House_window():
         width=107.0,
         height=51.0
     )
+    
+    def add():
+        prop_id = propertyid_entry.get()
+        area_size = areaSize_entry.get()
+        title = title_entry.get()
+        loc = location_entry.get()
+        soc_id = societyId_entry.get()
+        no_beds = Beds_entry.get()
+        no_bath = baths_entry.get()
+        house_id = houseId_entry.get()
+        Functionality.add_house.create("house",House_ID = house_id,No_of_Beds = no_beds,No_of_Baths = no_bath)
+        Functionality.add_property.add_property(area_size=area_size,location=loc,property_id=prop_id,property_type="house",society_id=soc_id,specific_id=house_id,title=title)
+        
+    
     HouseWindow.resizable(False, False)
     HouseWindow.mainloop()

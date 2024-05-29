@@ -1,8 +1,15 @@
 import mysql.connector
 from mysql.connector import Error
 
-def update_agent(connection, agent_id, agent_name, contact, agency_id, society_id):
+def update_agent(agent_id, agent_name, contact, agency_id, society_id):
     try:
+        connection =mysql.connector.connect(
+                    host  = "localhost",
+                    port = 3306,
+                    user = "root" ,
+                    password = "1234",
+                    database = "real_estate"
+                )
         cursor = connection.cursor()
 
         # Check if agency_id exists
@@ -26,29 +33,3 @@ def update_agent(connection, agent_id, agent_name, contact, agency_id, society_i
         print(f"Error updating agent: {e}")
     finally:
         cursor.close()
-
-try:
-    connection = mysql.connector.connect(
-         host="localhost",
-        user="root",
-        password="Manahil18!",
-        database="real_estate"
-    )
-    if connection.is_connected():
-        print("Connected to MySQL database")
-except Error as e:
-    print(f"Error connecting to MySQL database: {e}")
-
-# Take user input for agent details
-agent_id = int(input("Enter Agent ID to update: "))
-agent_name = input("Enter new agent name: ")
-contact = input("Enter new contact number: ")
-agency_id = int(input("Enter new Agency ID: "))
-society_id = int(input("Enter new Society ID: "))
-
-# Call the update_agent function with user input
-update_agent(connection, agent_id, agent_name, contact, agency_id, society_id)
-
-if connection.is_connected():
-    connection.close()
-    print("MySQL database connection closed")

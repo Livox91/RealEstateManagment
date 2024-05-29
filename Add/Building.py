@@ -1,7 +1,7 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-
+import Functionality.add_building
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame8")
 
@@ -224,7 +224,7 @@ def Building_window():
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("SubmitBtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     SubmitBtn.place(
@@ -264,5 +264,14 @@ def Building_window():
         height=30.0
     )
    
+    def add():
+        soc_id = societyID_entry.get()
+        no_shop = Noshops_entry.get()
+        no_apart = Noapartments_entry.get()
+        name = buildingName_entry.get()
+        id = buildingID_entry.get()
+        loc = location_entry.get()
+        Functionality.add_building.create("building",Building_ID = id , Building_Name = name, Adress = loc , No_of_Apartments = no_apart)
+
     BuildingWindow.resizable(False, False)
     BuildingWindow.mainloop()

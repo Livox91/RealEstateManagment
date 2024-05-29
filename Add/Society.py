@@ -1,7 +1,7 @@
 import importlib
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
-
+import Functionality.add_society
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH_SOCIETY = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame5")
@@ -105,21 +105,21 @@ def Society_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    SocietyCityEntry_img = PhotoImage(
+    SocietyNoofHousesEntry_img = PhotoImage(
         file=relative_to_assets_Society("entry_2.png"))
     SocietyCanvas.create_image(
         294.0,
         402.5,
-        image=SocietyCityEntry_img
+        image=SocietyNoofHousesEntry_img
     )
-    SocietyCityEntry = Entry(
+    SocietyNoofHousesEntry = Entry(
         SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    SocietyCityEntry.place(
+    SocietyNoofHousesEntry.place(
         x=261.0,
         y=388.0,
         width=66.0,
@@ -135,63 +135,63 @@ def Society_window():
         font=("NirmalaUI Bold", 20 * -1)
     )
 
-    SocietyNameEntry_img = PhotoImage(
+    SocietyNoofPlotsEntry_img = PhotoImage(
         file=relative_to_assets_Society("entry_3.png"))
     SocietyCanvas.create_image(
         586.0,
         402.5,
-        image=SocietyNameEntry_img
+        image=SocietyNoofPlotsEntry_img
     )
-    SocietyNameEntry = Entry(
+    SocietyNoofPlotsEntry = Entry(
         SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    SocietyNameEntry.place(
+    SocietyNoofPlotsEntry.place(
         x=554.0,
         y=388.0,
         width=64.0,
         height=27.0
     )
 
-    SocietyNoofHousesEntry_img = PhotoImage(
+    SocietyCityEntry_img = PhotoImage(
         file=relative_to_assets_Society("entry_4.png"))
     SocietyCanvas.create_image(
         580.0,
         257.5,
-        image=SocietyNoofHousesEntry_img
+        image=SocietyCityEntry_img
     )
-    SocietyNoofHousesEntry = Entry(
+    SocietyCityEntry = Entry(
         SocietyWindow,
         bd=0,
         bg="#FFFFFF",
         fg="#000716",
         highlightthickness=0
     )
-    SocietyNoofHousesEntry.place(
+    SocietyCityEntry.place(
         x=512.0,
         y=243.0,
         width=136.0,
         height=27.0
     )
 
-    SocietyNoofPlotsEntry_img = PhotoImage(
+    SocietyNameEntry_img = PhotoImage(
         file=relative_to_assets_Society("entry_5.png"))
     SocietyCanvas.create_image(
         454.5,
         331.0,
-        image=SocietyNoofPlotsEntry_img
+        image=SocietyNameEntry_img
     )
-    SocietyNoofPlotsEntry = Entry(
+    SocietyNameEntry = Entry(
         SocietyWindow,
         bd=0,
         bg="#F8F5F5",
         fg="#000716",
         highlightthickness=0
     )
-    SocietyNoofPlotsEntry.place(
+    SocietyNameEntry.place(
         x=261.0,
         y=315.0,
         width=387.0,
@@ -222,7 +222,7 @@ def Society_window():
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("Submitbtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     Submitbtn.place(
@@ -233,5 +233,13 @@ def Society_window():
         height=51.0
     )
 
+    def add():
+        city = SocietyCityEntry.get()
+        id = SocietyIDEntry.get()
+        no_houses = SocietyNoofHousesEntry.get()
+        no_plots = SocietyNoofPlotsEntry.get()
+        name = SocietyNameEntry.get()
+        Functionality.add_society.add_society(id=id,city=city,no_houses=no_houses,no_plot=no_plots,housep=0,plotp=0,name=name)
+        
     SocietyWindow.mainloop()
 

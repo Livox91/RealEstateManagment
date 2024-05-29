@@ -1,7 +1,7 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-
+import Functionality.add_listing
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame12")
 
@@ -314,7 +314,7 @@ def Rental_window():
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("SubmitBtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     SubmitBtn.place(
@@ -323,5 +323,19 @@ def Rental_window():
         width=107.0,
         height=51.0
     )
+   
+    def add():
+        list_id = listingId_entry.get()
+        rent_id = rent_entry.get()
+        prop_id = propertyId_entry.get()
+        client_id = clientId_entry.get()
+        list_date = listingDate_entry.get()
+        rent = rent_entry.get()
+        start_date= rentalDate_entry.get()
+        end_date = duration_entry.get()
+
+        Functionality.add_listing.create("listing",Listing_ID= list_id,Property_ID= prop_id,Listing_Date = list_date)
+        Functionality.add_listing.create("rental",Rental_ID= rent_id,Listing_ID= list_id,Client_ID = client_id,Rent= rent, Duration= end_date,Rental_Date= start_date)
+
     RentalWindow.resizable(False, False)
     RentalWindow.mainloop()

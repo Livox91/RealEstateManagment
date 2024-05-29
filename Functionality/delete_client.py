@@ -31,5 +31,3 @@ def delete_client(client_id):
 
     except mysql.connector.Error as err:
         print(f"Error: {err}")
-client_id_to_delete = input("Enter the Client ID to delete: ")
-delete_client(client_id_to_delete)

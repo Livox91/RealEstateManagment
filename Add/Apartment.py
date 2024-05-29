@@ -1,7 +1,8 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
-
+import Functionality.add_apartment
+import Functionality.add_property
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame11")
@@ -312,7 +313,7 @@ def Apartment_window():
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("SubmitBtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     SubmitBtn.place(
@@ -412,5 +413,19 @@ def Apartment_window():
         height=30.0
     )
 
+    def add():
+        prop_id = propertyid_entry.get()
+        area_size = areaSize_entry.get()
+        title = title_entry.get()
+        loc = location_entry.get()
+        soc_id = societyID_entry.get()
+        build_id = buildingID_entry.get()
+        apart_id = apartmentid_entry.get()
+        unit_id = unitId_entry.get()
+        floor_lvl = floorlvl_entry.get()
+        no_beds = NoBeds_entry.get()
+        no_bath = NoBath_entry.get()
+        Functionality.add_apartment.create("apartment",Apartment_ID= apart_id,Unit_ID = unit_id,Floor_Level = floor_lvl,Building_ID=build_id,No_of_bed=no_beds,No_of_baths= no_bath)
+        Functionality.add_property.add_property(area_size=area_size,location=loc,property_id=prop_id,property_type="apartment",society_id=soc_id,specific_id=apart_id,title=title)
     ApartmentWindow.resizable(False, False)
     ApartmentWindow.mainloop()

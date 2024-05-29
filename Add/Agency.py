@@ -1,7 +1,7 @@
 import importlib
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
-import Connection
+import Functionality.add_agency
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH_AGENCY = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame2")
@@ -128,7 +128,7 @@ def Agency_window():
         image=Submitbtn_img,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("he;;p"),
+        command= lambda: add(),
         relief="flat"
     )
     Submitbtn.place(
@@ -138,4 +138,10 @@ def Agency_window():
         width=107.0,
         height=51.0
     )
+   
+    def add():
+        name = AgencyName_entry.get()
+        id = AgencyIDEntry.get()
+        Functionality.add_agency.add_agency(name=name,id=id)
+
     AgencyWindow.mainloop()

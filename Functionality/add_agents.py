@@ -1,28 +1,20 @@
 import mysql.connector
 
-def add_client():
-    # Retrieve input values from the user
-    client_id = input("Enter Client ID: ")
-    client_name = input("Enter Client Name: ")
-    contact = input("Enter Contact Number: ")
-
-    host = "localhost"
-    user = "root"
-    password = "Manahil18!"
-    database = "real_estate"
-
+def add_agents(id,name,contact,agency_id,society_id):
+    
     try:
         
         connection = mysql.connector.connect(
-            host=host,
-            user=user,
-            password=password,
-            database=database
-        )
+                host  = "localhost",
+                port = 3306,
+                user = "root" ,
+                password = "1234",
+                database = "real_estate"
+            )
         cursor = connection.cursor()
 
-        sql = "INSERT INTO client (Client_id, Client_Name, Contact) VALUES (%s, %s, %s)"
-        val = (client_id, client_name, contact)
+        sql = "INSERT INTO agent (Agent_ID, Agent_Name, Contact,Agency_ID,Society_ID) VALUES (%s, %s, %s,%s,%s)"
+        val = (id,name,contact,agency_id,society_id)
 
         cursor.execute(sql, val)
         connection.commit()
@@ -30,9 +22,9 @@ def add_client():
         cursor.close()
         connection.close()
 
-        print("Client added successfully")
+        print("Agent added successfully")
 
     except mysql.connector.Error as err:
         print(f"Error: {err}")
 
-add_client()
+

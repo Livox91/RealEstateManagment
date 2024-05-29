@@ -3,8 +3,8 @@ from tkinter import Tk, Toplevel, Canvas, Entry, Button, PhotoImage
 import importlib
 
 class UpdateScreen:
-    def __init__(self, ):
-        
+    def __init__(self,):
+        self.id = None
         self.window = Toplevel()
         self.setup_window()
 
@@ -84,11 +84,11 @@ class UpdateScreen:
         self.window.mainloop()
     
     def updateAction(self):
-        id = self.get_id_entry_value()
-        print("hello")
-        print (id)
+        self.id = self.id_entry.get()
+        print (self.id)
         self.window.destroy()
+        
     def get_id_entry_value(self):
-        return self.id_entry.get()
+        return self.id
 
 

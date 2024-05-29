@@ -1,10 +1,10 @@
 from pathlib import Path
 from tkinter import Tk,Toplevel, Canvas, Entry, Text, Button, PhotoImage
 import importlib
+import Functionality.add_listing
 
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\HP\Documents\Projects\Database\Code\assets\frame13")
-
 def LandingWindowModule():
     LandingModule = importlib.import_module("LandingWindow")
     LandingModule.landing_window()
@@ -282,7 +282,7 @@ def Sale_window():
         image=SubmitBtn_,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("SubmitBtn clicked"),
+        command=lambda: add(),
         relief="flat"
     )
     SubmitBtn.place(
@@ -291,5 +291,19 @@ def Sale_window():
         width=107.0,
         height=51.0
     )
+  
+    def add():
+        list_id = listingId_entry.get()
+        sale_id = saleId_entry.get()
+        prop_id = propertyId_entry.get()
+        client_id = clientId_entry.get()
+        list_date = listingDate_entry.get()
+        price = price_entry.get()
+        sale_date= saleDate_entry.get()
+        
+
+        Functionality.add_listing.create("listing",Listing_ID= list_id,Property_ID= prop_id,Listing_Date = list_date)
+        Functionality.add_listing.create("sale",Sale_ID= sale_id,Listing_ID= list_id,Client_ID = client_id,Price= price,Sale_Date= sale_date)
+  
     SaleWindow.resizable(False, False)
     SaleWindow.mainloop()

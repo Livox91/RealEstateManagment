@@ -44,5 +44,3 @@ def delete_listing(listing_id):
         connection.close()
     except mysql.connector.Error as err:
         print(f"Error: {err}")
-listing_id_to_delete = input("Enter the Listing ID to delete: ")
-delete_listing(listing_id_to_delete)
